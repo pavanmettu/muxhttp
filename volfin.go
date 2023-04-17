@@ -20,7 +20,7 @@ func main() {
 	//flightrouter := mux.NewRouter().StrictSlash(true)
 	flightrouter := mux.NewRouter()
 	flightrouter.HandleFunc("/calculate", findFlightPath).Methods("POST")
-	log.Fatal(http.ListenAndServe(":8081", flightrouter))
+	log.Fatal(http.ListenAndServe(":8080", flightrouter))
 }
 
 func findFlightPath(w http.ResponseWriter, r *http.Request) {
