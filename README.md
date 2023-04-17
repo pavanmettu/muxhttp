@@ -31,6 +31,12 @@ Response:
   "source":"SFO","dest":"EWR"
 }
 
+JSON Output is of below form. Any client reader should read based on the name "source" and "dest".
+type flight struct {
+	Source string `json:"source"`
+	Dest   string `json:"dest"`
+}
+
 
 This is the implementation of an API for finding/tracking a person or Object
 given the data in multiple pairs of cities.
