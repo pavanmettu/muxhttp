@@ -11,11 +11,26 @@ After that,
 go build volumefin.go
 
 and run volumefin in one terminal. It will start the go process for handling requests under "/calculate".
-After that CURL can be used for testing input data.
+After that CURL command line can be used for testing input data.
 
 Goal: To create a simple microservice API that can help us understand and track how a particular person's flight path may be queried. 
 The API should accept a request that includes a list of flights, which are defined by a source and destination airport code. 
 These flights may not be listed in order and will need to be sorted to find the total flight paths starting and ending airports.
+
+
+API: 
+URL: http://<hostname>:8080/calculate
+METHOD: POST
+DATA: <>
+  
+Example Request:
+curl -X POST  http://localhost:8080/calculate -H 'Content-Type: application/json' -d '[{"source":"IND","dest":"EWR"},{"source":"SFO","dest":"IND"}]'
+  
+Response:
+{
+  "source":"SFO","dest":"EWR"
+}
+
 
 This is the implementation of an API for finding/tracking a person or Object
 given the data in multiple pairs of cities.
